@@ -1,5 +1,8 @@
 <?php
- 
+// Variables
+$admin_c = false;
+$admin_t = false;
+
 session_start();
  
 if(isset($_GET['logout'])){    
@@ -11,12 +14,24 @@ if(isset($_GET['logout'])){
     session_destroy();
     header("Location: index.php"); // Redirect the user
 }
- 
-if(isset($_POST['enter'])){
+ // Checks the user input- new query for admin login
+if(isset($_POST['enter'])){ 
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
     }
-    else{
+ 
+     // Admin login for C
+     else if($_POST['name'] = "C (Admin)"){
+        $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+        $admin_c = true;
+      
+      // Admin login for T
+     else if($_POST['name'] = "T (Admin)"){ // You may want to change login code
+        $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+        $admin_t = true;
+      
+    }
+    else {
         echo '<span class="error">Please type in a name</span>';
     }
 }
