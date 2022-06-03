@@ -1,4 +1,5 @@
 <?php
+
 // Variables
 $admin = false;
 
@@ -20,12 +21,13 @@ if(isset($_POST['enter'])){
     }
  
      // Admin login for C
-     else if($_POST['name'] = "C (Admin)"){
+     else if($_POST['name'] = "C [Admin]"){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
         $admin = true;
+     }
       
-      // Admin login for T
-     else if($_POST['name'] = "T (Admin)"){ // You may want to change login code
+      // Admin login for Thorber
+     else if($_POST['name'] = "Thorber [Admin]"){ // You may want to change login code
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
         $admin = true;
       
